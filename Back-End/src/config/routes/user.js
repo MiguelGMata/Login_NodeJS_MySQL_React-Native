@@ -5,7 +5,6 @@ module.exports=(express, controllers)=>{
     router.get('/user', (req, res) => {
         res.json({ message : 'Route user active'});
     })
-    router.get('/users', controllers.user.getAllUsers);
     router.post('/signUp', controllers.user.controllerSignUp);
     router.post('/signIn', controllers.user.controllerSignIn);
     return router

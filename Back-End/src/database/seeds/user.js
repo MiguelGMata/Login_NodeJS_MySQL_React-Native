@@ -1,9 +1,9 @@
 module.exports = () => {
     return [
         {
-            firt_name:'Verocka',
-            last_name: 'Mata',
-            email: 'veroscka@gmail.com',
+            firtName:'Verocka',
+            lastName: 'Mata',
+            email: 'verocka@gmail.com',
             password: '$2b$10$tUsy0cZXW0cWUc0ikFxJceWEDhhGujk63UngESUU6wdbqTb7WH1/i',
             phone:'0656822946',
             address: '56 rue Sadi Carnot',
@@ -13,8 +13,8 @@ module.exports = () => {
             job:'Nettoyage',
             description: 'Famme de ménage à Paris 15éme, avec 5 ans de experiences',
             price: '13',
-            dateOn: new Date(),
-            dateOff: new Date(),
+            dateOn: "10-03-2022",
+            dateOff: "10-11-2022",
             createdAt: new Date(),
             updatedAt: new Date(),
         }

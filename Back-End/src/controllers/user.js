@@ -22,24 +22,22 @@ module.exports=(services)=>{
                 if (result){
                     res.status(400).json(result)
                 }else{
-                    const result = await services.user.servicesSignUpOne(userData)
-                    .then(user => {
-                        if (!user) {
-                            services.bcrypts.bcryptPassword(req.body.password, 10)
-                            .then((passwordHash) => {
-                                userData.password = passwordHash
-                                services.user.servicesSignUpCreate(userData)
-                            });
-                            res.status(201).json("Utilisateur inscrit !" + userData.email);
+                    const user = await services.user.servicesSignUpOne(userData)
+                    if (!user) {
+                        services.bcrypts.bcryptPassword(req.body.password, 10)
+                        .then(async (passwordHash) => {
+                            userData.password = passwordHash
+                            await services.user.servicesSignUpCreate(userData)
+                            await services.mailer.sendMail(userData)
+                        });
+                        res.status(201).json("Utilisateur inscrit !" + userData.email);
+                        
                         } else {
-                            res.status(400).json({error: "L'utilisateur existe déjà"});
-                        }
-                    })
-                    .catch(err => { res.status(400).json('Erreur : utilisateur non inscrit' + err)});
-                    res.send(result)
+                            res.status(400).json({error: "L'utilisateur " + userData.email + " existe déjà"});
+                    }
                 }
             }catch(err) {
-                res.status(400).json('Erreur : utilisateur non ajouté au système!' + err)
+                res.status(400).json('Erreur : utilisateur non inscrit!' + err)
             }
         },
         controllerSignIn: async(req, res) => {
@@ -69,12 +67,6 @@ module.exports=(services)=>{
             }
         
         },
-        getAllUsers: async(req, res)=>{
-            let result = await services.user.servicesGetAllUsers()
-            res.send(result);
-        },
-        
-       
     }
     return user_controller;
 }
