@@ -2,7 +2,8 @@
 const repository = require('../repositories'),
     nodemailer = require('nodemailer'),
     bcrypt = require('bcrypt'),
-    jwt = require('jsonwebtoken');
+    jwt = require('jsonwebtoken'),
+    env = require('../config/env')
 
 
 
@@ -18,7 +19,7 @@ const services = {
     mailer: mailer_service(nodemailer),
     bcrypts: bcrypts_service(bcrypt),
     regex: regex_service(),
-    jwt: token_service(jwt),
+    jwt: token_service(jwt, env),
 }
 
 module.exports = services;

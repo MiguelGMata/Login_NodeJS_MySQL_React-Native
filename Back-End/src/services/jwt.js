@@ -1,6 +1,5 @@
-const JWT_SIGN_SECRET = 'sdlfhdslkfhdslfh820289fdsf0982298sdlfkjf0019';
-
-module.exports = (jwt) => {
+module.exports = (jwt, env) => {
+  const JWT_SIGN_SECRET = env.app_JWT
     const token_service = {
   generateTokenForUser: (userData) => {
     return jwt.sign( 
