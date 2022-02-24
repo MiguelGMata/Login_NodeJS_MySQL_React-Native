@@ -1,0 +1,39 @@
+{
+  "name": "homepropre",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "body-parser": "^1.19.2",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "express-async-errors": "^3.1.1",
+    "helmet": "^5.0.2",
+    "jsonwebtoken": "^8.5.1",
+    "morgan": "^1.10.0",
+    "mysql": "^2.18.1",
+    "mysql2": "^2.3.3",
+    "node-sass": "^7.0.1",
+    "nodemailer": "^6.7.2",
+    "nodemo": "^1.0.0",
+    "nodemon": "^2.0.15",
+    "path": "^0.12.7",
+    "prettier": "^2.5.1",
+    "sass": "^1.49.8",
+    "sequelize": "^6.16.2",
+    "sequelize-cli": "^6.4.1"
+  },
+  "devDependencies": {
+    "babel-register": "^6.26.0"
+  }
+}

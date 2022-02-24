@@ -1,0 +1,11 @@
+//config de base
+- npm init -yes
+- npm install --save bcrypt body-parser cors express express-async-errors helmet jsonwebtoken mysql 
+mysql2 node-sass path sass sequelize sequelize-cli nodemon morgan prettier
+
+- npx sequelize db:create 
+- npx sequelize-cli model:generate --name users --attributes firt_name:string,last_name:string,email:string,password:string,phone:string,address:string,postalCode:string,city:string,country:string,job:string,description:string,price:string,dateOn:date,dateOff:date;
+- npx sequelize db:migrate
+- npx sequelize db:seed:all
+
+//creation routes 
