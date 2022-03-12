@@ -8,7 +8,7 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      firtName: {
+      firstName: {
         type: Sequelize.STRING
       },
       lastName: {
@@ -21,25 +21,25 @@ module.exports = {
         type: Sequelize.STRING
       },
       phone: {
-        type: Sequelize.STRING(50)
+        type: Sequelize.STRING
       },
       address: {
         type: Sequelize.STRING
       },
       postalCode: {
-        type: Sequelize.STRING(50)
+        type: Sequelize.STRING
       },
       city: {
-        type: Sequelize.STRING(50)
+        type: Sequelize.STRING
       },
       country: {
-        type: Sequelize.STRING(50)
+        type: Sequelize.STRING
       },
       job: {
         type: Sequelize.STRING
       },
       description: {
-        type: Sequelize.STRING(1000)
+        type: Sequelize.STRING
       },
       price: {
         type: Sequelize.STRING

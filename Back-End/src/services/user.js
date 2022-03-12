@@ -4,14 +4,14 @@ module.exports = (repository) => {
         servicesGetAllUsers: async(data) => {
             return repository.user.repositoryGetAllUsers();
         },
-        servicesSignUpOne: async(data) => {
-            return repository.user.repositorySignUpOne(data);
+        servicesPostOneEmail: async(data) => {
+            return repository.user.repositoryPostOneEmail(data);
         },
         servicesSignUpCreate: async(data) => {
             return repository.user.repositorySignUpCreate(data);
         },
-        servicesSignInOne: async(data) => {
-            return repository.user.repositorySignInOne(data);
+        servicesPostOneUser: async(data) => {
+            return repository.user.repositoryPostOneUser(data);
         }
     }
     return user_service

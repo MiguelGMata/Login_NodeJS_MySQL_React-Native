@@ -1,3 +1,4 @@
+const { BadRequestError } = require('../middlewares/helpers/errors')
 const EMAIL_REGEX = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 const PASSWORD_REGEX = /^(?=.*\d).{4,8}$/;
 
@@ -5,7 +6,7 @@ module.exports=()=> {
     const regex_service = {
         regexUserSignUp:  async(data)=>{
             if (data.lastName == null || data.lastName == "") {
-                return("Les champs  nom n'est pas renseignés , veuillez recommencer.'")
+                  return("Le champ  nom n'est pas renseignés , veuillez recommencer.'")
             }else if (data.firstName == null || data.firstName == "") {
                 return("Le champ prenom n'est pas renseignés , veuillez recommencer.")
             }else if (!EMAIL_REGEX.test(data.email)) {

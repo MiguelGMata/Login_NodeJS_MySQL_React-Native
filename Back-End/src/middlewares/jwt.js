@@ -1,8 +1,9 @@
-module.exports = (jwt, env) => {
-  const JWT_SIGN_SECRET = env.app_JWT
-    const token_service = {
+const jwt = require('jsonwebtoken');
+
+const JWT_SIGN_SECRET = 'sdlfhdslkfhdslfh820289fdsf0982298sdlfkjf0019';
+module.exports = {
   generateTokenForUser: (userData) => {
-    return jwt.sign( 
+    return jwt.sign( // pour signer le token
       {
         userId: userData.id,
       },
@@ -17,7 +18,7 @@ module.exports = (jwt, env) => {
   },
   getUserId: (authorization) => {
     var userId = -1;
-    var token = authorization;
+    var token = module.exports.parseAuthorization(authorization);
     if (token != null) {
       try {
         var jwtToken = jwt.verify(token, JWT_SIGN_SECRET);
@@ -26,6 +27,5 @@ module.exports = (jwt, env) => {
     }
     return userId;
   }
-}
-return token_service;
+
 };

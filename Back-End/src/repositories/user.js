@@ -5,7 +5,7 @@ module.exports= (models) => {
             const users = await models.Users.findAll()
             return users;
         },
-        repositorySignUpOne: async(data) => {
+        repositoryPostOneEmail: async(data) => {
             const user = await models.Users.findOne({
                 where: {
                     email: data.email
@@ -17,11 +17,12 @@ module.exports= (models) => {
             const user = await  models.Users.create(data)
             return user;
         },
-        repositorySignInOne: async(data) => {
-            const user = await models.Users.findOne({
-                where: {
-                    email: data.email
-                }
+        repositoryPostOneUser: async(data) => {
+            const user = await models.Users.findByPk(data)
+                         await models.Users.findOne({
+                            where: {
+                                id: user.id
+                            }
             })
             return user;
         }
